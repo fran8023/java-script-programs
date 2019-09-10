@@ -34,6 +34,8 @@ function exe1() {
 
 
 function exe2(){
+
+
     var preco = 5.0
     var qtde = 120
     var lucro 
@@ -49,12 +51,12 @@ function exe2(){
         preco = preco - 0.5
         saida  = saida + "</tr>"
 
-        }
+    }
         saida = saida + "</table>"
         document.getElementById ("saida").innerHTML = saida
 
-
-    }
+}
+    
 
 
     function exe3(){
@@ -63,9 +65,13 @@ function exe2(){
         var saida = ""
         while (i<=0){
                 saida = saida + `\n ${numero} x ${i} = ${numero*1}`
+   
+ 
+ 
+ 
                 i++; // i = i + 1
-        }   
-    }
+    }   }
+    
 
 
 
@@ -114,7 +120,8 @@ function exe2(){
         
 
     }
-}
+    }
+
 
 function exe6(){
         var totalVista = 0
@@ -148,7 +155,7 @@ function exe7(){
     var item2 = 0 // soma das alturas com idade entre 10 e 20
     var aux = 0 // qtde de pessoas com idade entre 10 e 20
     var item3 = 0  // qtde de pessoas com peso < 40
-    var contador = // conta pessoas
+    var contador = 0// conta pessoas
     do {
         var idade = Number(prompt("Informe Idade"))
         var altura = Number(prompt("Informe altura"))
