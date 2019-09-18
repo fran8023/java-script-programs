@@ -186,4 +186,95 @@ function exe7(){
    
        
 
+
+    function exe6() {
+    var NomesVendedores = []
+    var Vendas = []
+    var Comissoes = []
+    var Receber = []
+    var resp = `<table border = '1'><tr>  <th> Nomes </th> <th> Vendas </th> <th> Comissoes </th> <th> Receber </th> `
+    for (var i = 0; i < 3; i++) {
+        NomesVendedores.push(prompt(`${i}- Informe nome `))
+        Vendas.push(Number(prompt(`${i}- Informe venda`)))
+        Comissoes.push(Number(prompt(`${i}- Informe a comissão`)))
+
+    }
+    for (var i = 0; i < 3; i++) {
+        Receber.push(Vendas[i] * Comissoes[i] / 100)
+    }
+
+    for (var i = 0; i < 3; i++) {
+        resp = resp + `<tr> <td>${NomesVendedores[i]}</td><td>${(Vendas[i]).toFixed(2)}</td> <td> ${(Comissoes[i]).toFixed(2)}</td> <td>${(Receber[i]).toFixed(2)}</td>`
+    }
+    resp = resp + `</tr> + </table>`
+    document.getElementById("resp").innerHTML = resp
 }
+function exe7() {
+    var item1 = 0 //qtde de idades > 50
+    var item2 = 0 //soma as alturas com idade entre 10 e 20
+    var aux = 0 //qtde de pessoas com idade entre 10 e 20
+    var item3 = 0 //qtde de pessoas  com peso < 40
+    var idades = [] // vetor de idades
+    var pesos = [] // vetor de pesos
+    var alturas = [] //vetor de alturas
+    // entrada de dados
+    do {
+        // insere no vetor
+        idades.push(Number(prompt("Informe idade")))
+        alturas.push(Number(prompt("Informe altura")))
+        pesos.push(Number(prompt("Informe o peso")))
+        var opcao = prompt("Deseja continuar? (S/N)").toUpperCase();
+    }
+    while (opcao != "N")
+    //processamento
+    for (var i = 0; i < idades.length; i++) {
+        if (idades[i] > 50) {
+            item1++
+        }
+        if ((idades[i] > 10) && (idades[i] < 20)) {
+            item2 = item2 + alturas[i]
+            aux++
+        }
+        if (pesos[i] < 40) {
+            item3++
+        }
+    }
+    alert(` Item1: ${item1}\n Item2: ${item2 / aux}\n Item3: ${item3 / idades.length * 100}`)
+
+}
+function exe8() {
+    var idades = []
+    var pesos = []
+    var alturas = []
+    var olhos = []
+    var cabelos = []
+    for (var i = 1; i <= 5; i++) {
+        idades.push(Number(prompt(`${i}- informe a idade`)))
+        pesos.push(Number(prompt(`${i}- informe a idade`)))
+        alturas.push(Number(prompt(`${i}- informe a idade`)))
+        olhos.push(prompt(`${i}- informe a idade`))
+        cabelos.push(prompt(`${i}- informe a idade`))
+    }
+    var item1 = 0
+    var item2 = 0
+    var aux2 = 0
+    var item3 = 0
+    var item4 = 0
+    for (var i = 0; i <= 5; i++) {
+        if ((idades[i] > 50) && (pesos[i])) {
+            item1++
+        }
+        if (alturas[i] < 1.50) {
+            item2 = item2 + idades[i]
+            aux2++
+        }
+        if (olhos[i] == "A") {
+            item3++
+        }
+        if ((cabelos[i] == "R") && (olhos[i] == "A")) {
+            item4++
+        }
+    }
+    alert(` Item1: ${item1}\n Item2: ${item2 / aux2}\n Item3: ${item3 / 6 * 100} Item4:${item4}`)
+}
+    
